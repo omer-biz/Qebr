@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Afocha(models.Model):
     name = models.CharField("Afocha Name", max_length=200, unique=True, blank=False)
 
@@ -9,14 +7,6 @@ class Afocha(models.Model):
         return self.name
 
 class Deceased(models.Model):
-    # AFOCHA_CHOICES = [
-    #     ("SS", "SharifSheikh"),
-    #     ("HN", "Hanef"),
-    #     ("IS", "Islah"),
-    #     ("GA", "GistiAbida"),
-    #     ("AS", "Abubeker Sidiq"),
-    #     ("SA", "Shulum Ahmed")
-    # ]
     GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
 
     efname = models.CharField("English First Name", max_length=100, blank=False)
@@ -31,13 +21,8 @@ class Deceased(models.Model):
 
     qebele = models.IntegerField("Qebele")
 
-    # afname = models.CharField("Arabic First Name", max_length=100)
-    # amname = models.CharField("Arabic Middle Name", max_length=100)
-    # alname = models.CharField("Arabic Last  Name", max_length=100)
-
-    # hfname = models.CharField("Harari First Name", max_length=100)
-    # hmname = models.CharField("Harari Middle Name", max_length=100)
-    # hlname = models.CharField("Harari Last Name", max_length=100)
+    lon = models.FloatField()
+    lat = models.FloatField()
 
 
     def __str__(self):
@@ -45,4 +30,3 @@ class Deceased(models.Model):
 
     def full_name(self):
         return str(self)
-
