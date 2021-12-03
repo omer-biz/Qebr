@@ -1,5 +1,7 @@
-from sites.models import Deceased, Afocha
 from rest_framework import serializers
+
+from sites.models import Deceased, Afocha
+
 
 class DeceasedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

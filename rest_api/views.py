@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from rest_framework import viewsets
 from rest_framework import permissions
 
@@ -12,7 +10,7 @@ class DeceasedViewSet(viewsets.ModelViewSet):
     '''
     queryset = Deceased.objects.all().order_by('efname')
     serializer_class = DeceasedSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 class AfochaViewSet(viewsets.ModelViewSet):
     '''
@@ -20,4 +18,4 @@ class AfochaViewSet(viewsets.ModelViewSet):
     '''
     queryset = Afocha.objects.all().order_by('name')
     serializer_class = AfochaSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

@@ -21,7 +21,7 @@ from rest_framework import routers
 from rest_api import views
 
 router = routers.DefaultRouter()
-router.register(r'afochas', views.AfochaViewSet)
+router.register(r'afocha', views.AfochaViewSet)
 router.register(r'deceased', views.DeceasedViewSet)
 
 urlpatterns = [
